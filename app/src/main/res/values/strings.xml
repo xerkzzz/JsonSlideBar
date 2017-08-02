@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">JsonSlideBar</string>
+    <string name="url">http://dev.tabasko.ga/admin/images/595cbdd340e99.jpg</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="id">Id</string>
+</resources>
