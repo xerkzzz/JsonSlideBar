@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,6 +84,7 @@ public class ManagersAdapter extends ArrayAdapter<Managers> {
             this.bmImage=bmImage;
         }
         protected Bitmap doInBackground(String... urls) {
+            //URL imgUrl = (URL);
             String urldisplay="http://dev.tabasko.ga/admin/images/595cbd7bd8f98.jpg";
             Bitmap mIcon= null;
             try {

@@ -55,18 +55,15 @@ public class MainActivity extends Activity {
         protected Boolean doInBackground(String... params) {
             try {
                 HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
-                //connection.setDoOutput(true);*/
-                connection.setDoInput(true);
-                connection.setRequestProperty("Content-Type", "application/json");
                 connection.setRequestProperty("Accept", "application/json");
-                connection.setRequestMethod("POST");
+                connection.setRequestMethod("GET");
                 int status = connection.getResponseCode();
                 if (status != 200) {
                     throw new IOException("Post failed with error code " + status);
                 }
-                BufferedReader  bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuffer  buffer = new StringBuffer((CharSequence) connection.getOutputStream());
 
-                JSONObject jsonObj = new JSONObject(new JSONTokener(bufferedReader.toString()));
+                JSONObject jsonObj = new JSONObject(new JSONTokener(buffer.toString()));
                 JSONArray jsonArray = jsonObj.getJSONArray("Managers");
                 for (int i =0; i<jsonArray.length();i++)
                 {
